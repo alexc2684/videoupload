@@ -1,0 +1,26 @@
+<head>
+  <title>videoUploader</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Upload Videos</h1>
+
+    {{> uploadTemplate}}
+  </div>
+
+</body>
+
+<template name="uploadTemplate">
+  {{> upload_bootstrap multiple=true callbacks=myCallbacks formData=someStuff }}
+  <br/><br/>
+  <table border="2">
+    <tbody>
+      {{#each theUploads}}
+      <tr>
+        <td>{{name}}</td><td><a target="_blank" href="/upload{{path}}">link</a></td><td><button id="deleteFileButton">delete</button></td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</template>
